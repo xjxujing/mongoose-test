@@ -11,12 +11,16 @@ const MarioChar = require("../models/mariochar");
 describe("saving test", function () {
     // 创建需要测试的任务
     // 参数1 任务名
-    it("测试两个数的值是否相等", function () {
-        // 使用断言 类似于错误捕获 try catch
-        assert(2 + 3 === 5);
+    it("数据存储成功", function () {
+        // 准备需要存储的数据
+        let char = new MarioChar({
+            name: "Mario",
+        });
 
-        // package.json 中 scripts test 修改成mocha 因为 echo 是 php 的
-        // 控制台输入npm run test 谁引用了mocha就会运行谁
-        // 看控制台
+        // 存储数据
+        char.save().then(function (result) {
+            // 注意connection.js加一句Promise
+            assert(result.isNew === false);
+        });
     });
 });

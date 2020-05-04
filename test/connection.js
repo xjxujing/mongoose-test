@@ -1,5 +1,7 @@
 // 引入模块
-var mongoose = require("mongoose");
+let mongoose = require("mongoose");
+
+mongoose.Promise = global.Promise;
 
 // 连接MongonDB  test是数据库名 mongodb是协议头
 mongoose.connect("mongodb://localhost/test", { useNewUrlParser: true, useUnifiedTopology: true });
