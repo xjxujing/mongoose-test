@@ -1,17 +1,17 @@
 const mocha = require("mocha");
 const assert = require("assert"); // 自带的, 引入断言模块
 
+const MarioChar = require("../models/mariochar");
+
 /**
  * 测试哪个数据库
  * @param 参数1 写测试哪个 参数2
  */
 // 测试时对当前测试的一个描述
-mocha.descirbe("demo test", function () {
-
+describe("saving test", function () {
     // 创建需要测试的任务
     // 参数1 任务名
     it("测试两个数的值是否相等", function () {
-
         // 使用断言 类似于错误捕获 try catch
         assert(2 + 3 === 5);
 
